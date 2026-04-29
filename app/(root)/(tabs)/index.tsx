@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function index() {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 p-4 bg-gray-50">
       <View>
         <Text>Home Screen</Text>
       </View>
