@@ -75,7 +75,7 @@ export default function SignUp() {
           Verify your account
         </Text>
         <Text className="text-gray-500 mb-6">
-          We send a email to {signUp.emailAddress}
+          We send a mail to {signUp.emailAddress}
         </Text>
 
         <TextInput
