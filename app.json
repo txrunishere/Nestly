@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "estate-app",
-    "slug": "estate-app",
+    "name": "nestly",
+    "slug": "nestly",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
