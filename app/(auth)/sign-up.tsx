@@ -1,5 +1,5 @@
 import { useSignUp } from "@clerk/expo";
-import { Link, useRouter } from "expo-router";
+import { Href, Link, useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
   ActivityIndicator,
@@ -54,7 +54,7 @@ export default function SignUp() {
       await signUp.finalize({
         navigate: ({ decorateUrl }) => {
           const url = decorateUrl("/");
-          router.replace(url as any);
+          router.replace(url as Href);
         },
       });
     }
