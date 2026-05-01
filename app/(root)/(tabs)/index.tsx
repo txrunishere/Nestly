@@ -59,10 +59,11 @@ export default function index() {
   return (
     <SafeAreaView className="flex-1 p-4 bg-gray-50">
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={recommended}
         keyExtractor={(data) => data.id}
         contentContainerStyle={{
-          paddingBottom: 100,
+          paddingBottom: 20,
         }}
         ListHeaderComponent={
           <View>

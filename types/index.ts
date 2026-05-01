@@ -1,9 +1,11 @@
+export type PropertyType = "apartment" | "house" | "villa" | "studio" | null;
+
 export type Property = {
   id: string;
   title: string;
   description: string;
   price: number;
-  type: string;
+  type: PropertyType;
   bedrooms: number;
   bathrooms: number;
   area_sqft: number;
