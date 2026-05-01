@@ -1,5 +1,5 @@
+import { CustomTabBar } from "@/components/custom-tabbar";
 import { useUserStore } from "@/store/user.store";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 import { Platform } from "react-native";
@@ -9,63 +9,16 @@ function AndroidTabs() {
 
   return (
     <Tabs
+      tabBar={(props) => {
+        return <CustomTabBar {...props} isAdmin={isAdmin} />;
+      }}
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
           height: 60,
         },
       }}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: "Search",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" color={color} size={size} />
-          ),
-        }}
-      />
-
-      {isAdmin && (
-        <Tabs.Screen
-          name="create"
-          options={{
-            title: "Add Property",
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="add" color={color} size={size} />
-            ),
-          }}
-        />
-      )}
-
-      <Tabs.Screen
-        name="saved"
-        options={{
-          title: "Saved",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="bookmark" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" color={color} size={size} />
-          ),
-        }}
-      />
-    </Tabs>
+    />
   );
 }
 
@@ -90,6 +43,11 @@ function IOSTabs() {
           <Label>Add Property</Label>
         </NativeTabs.Trigger>
       )}
+
+      <NativeTabs.Trigger name="saved">
+        <Icon sf="bookmark.fill" />
+        <Label>Saved</Label>
+      </NativeTabs.Trigger>
 
       <NativeTabs.Trigger name="profile">
         <Icon sf="person.fill" />
