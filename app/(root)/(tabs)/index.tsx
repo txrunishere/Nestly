@@ -5,6 +5,7 @@ import { Property } from "@/types";
 import { getGreeting } from "@/utils/getGreeting";
 import { useUser } from "@clerk/expo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import React, { useCallback, useState } from "react";
 import {
@@ -80,15 +81,26 @@ export default function index() {
             </View>
 
             {/* SEARCH BAR */}
-            <TouchableOpacity
-              onPress={() => router.push("/(root)/(tabs)/search")}
-              className="shadow bg-white rounded-md flex-row items-center gap-3 mb-4 py-2 px-3"
-            >
-              <FontAwesome name="search" size={18} color={"#9CA3AF"} />
-              <Text className="text-gray-400">
-                Search properties, apartments...
-              </Text>
-            </TouchableOpacity>
+            <View className="flex-row items-center ">
+              <TouchableOpacity
+                onPress={() => router.push("/(root)/(tabs)/search")}
+                className="shadow flex-1 mr-2 bg-white rounded-md flex-row items-center gap-3 mb-4 py-2 px-3"
+              >
+                <FontAwesome name="search" size={18} color={"#9CA3AF"} />
+                <Text className="text-gray-400">
+                  Search properties, apartments...
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() =>
+                  router.push("/(root)/(tabs)/search?showFilters=true")
+                }
+                className="bg-blue-500 p-2 mb-4 rounded-md"
+              >
+                <Ionicons name="options" size={18} color={"#fff"} />
+              </TouchableOpacity>
+            </View>
 
             {/* FEATURED PROPERTIES */}
             <View className="mb-4">
