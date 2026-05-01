@@ -1,5 +1,5 @@
 import { useUserStore } from "@/store/user.store";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 import { Platform } from "react-native";
@@ -21,7 +21,7 @@ function AndroidTabs() {
         options={{
           title: "Home",
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="home" color={color} size={size} />
+            <Ionicons name="home" color={color} size={size} />
           ),
         }}
       />
@@ -30,7 +30,7 @@ function AndroidTabs() {
         options={{
           title: "Search",
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="search" color={color} size={size} />
+            <Ionicons name="search" color={color} size={size} />
           ),
         }}
       />
@@ -41,7 +41,7 @@ function AndroidTabs() {
           options={{
             title: "Add Property",
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="plus-circle" color={color} size={size} />
+              <Ionicons name="add" color={color} size={size} />
             ),
           }}
         />
@@ -52,7 +52,7 @@ function AndroidTabs() {
         options={{
           title: "Saved",
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" color={color} size={size} />
+            <Ionicons name="bookmark" color={color} size={size} />
           ),
         }}
       />
@@ -61,7 +61,7 @@ function AndroidTabs() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="user" color={color} size={size} />
+            <Ionicons name="person" color={color} size={size} />
           ),
         }}
       />
