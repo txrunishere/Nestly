@@ -1,6 +1,7 @@
 import { Property } from "@/types";
 import { formatPrice } from "@/utils/formatPrice";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useRouter } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 type PropertyCardProps = {
@@ -14,11 +15,12 @@ export const PropertyCard = ({
   onUnsave,
   showSave = false,
 }: PropertyCardProps) => {
+  const router = useRouter();
   const isSaved = false;
 
   return (
     <TouchableOpacity
-      // onPress={() => router.push(`/(root)/property/${property.id}`)}
+      onPress={() => router.push(`/(root)/property/${property.id}`)}
       className="flex-row bg-white rounded-2xl mx-1 mb-4 overflow-hidden"
     >
       <Image

@@ -14,7 +14,7 @@ export const FeaturedCard = ({ property }: FeaturedCardProps) => {
   return (
     <TouchableOpacity
       style={[styles.card, { opacity: property.is_sold ? 0.5 : 1 }]}
-      // onPress={() => router.push(`/(root)/property/${property.id}`)}
+      onPress={() => router.push(`/(root)/property/${property.id}`)}
     >
       <Image
         source={{ uri: property.images[0] }}
