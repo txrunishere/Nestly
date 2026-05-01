@@ -9,6 +9,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
 import {
+  ActivityIndicator,
   FlatList,
   Text,
   TextInput,
@@ -195,6 +196,27 @@ export default function search() {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <PropertyCard property={item} />}
         keyExtractor={(data) => data.id}
+        ListHeaderComponent={
+          !isLoading && results.length > 0 ? (
+            <View className="mb-2">
+              <Text className="ml-1 text-gray-600 text-sm">
+                {results.length}{" "}
+                {results.length > 1 ? "properties" : "property"} found
+              </Text>
+            </View>
+          ) : null
+        }
+        ListEmptyComponent={
+          !isLoading ? (
+            <View className="pt-10">
+              <Text className="text-center  text-gray-400">
+                No properties found!
+              </Text>
+            </View>
+          ) : (
+            <ActivityIndicator className="py-10" />
+          )
+        }
       />
 
       <FilterModal
