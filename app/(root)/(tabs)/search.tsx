@@ -104,7 +104,7 @@ export default function search() {
         </Text>
 
         <View className="flex-row items-center gap-3">
-          <View className="flex-1 shadow flex-row items-center bg-white rounded-2xl gap-3 px-3">
+          <View className="flex-1 shadow flex-row items-center bg-white rounded-xl gap-3 px-3">
             <FontAwesome name="search" size={18} color={"#9CA3AF"} />
             <TextInput
               className="flex-1 py-3 text-gray-800"

@@ -213,8 +213,6 @@ export const FilterModal = ({ showFilters, onClose }: FilterModelProps) => {
               );
             })}
           </View>
-
-          <View className="flex-row gap-2 flex-wrap mb-6"></View>
         </ScrollView>
 
         <TouchableOpacity
