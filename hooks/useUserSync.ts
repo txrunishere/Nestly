@@ -20,17 +20,11 @@ export const useUserSync = () => {
     }
 
     // 1. Try to find user in Supabase
-    const { data: supabaseUser, error: selectError } = await supabase
+    const { data: supabaseUser } = await supabase
       .from("users")
       .select("clerk_id,is_admin")
       .eq("clerk_id", user.id)
       .single();
-
-    if (selectError) {
-      console.error("Supabase select error:", selectError);
-      setIsAdmin(false);
-      return;
-    }
 
     if (supabaseUser && typeof supabaseUser.is_admin !== "undefined") {
       setIsAdmin(!!supabaseUser.is_admin);
